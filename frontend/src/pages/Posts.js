@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FlatList, Text, View } from 'react-native';
-import { db } from '../firebase';
+import { db } from '../../../backend/lib/firebase';
 
 const Posts = () => {
     const [posts, setPosts] = useState([]);

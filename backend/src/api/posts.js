@@ -1,4 +1,4 @@
-import { db } from 'src/firebase';
+import { db } from '../../lib/firebase';
 
 export default async (req, res) => {
     const posts = [];
