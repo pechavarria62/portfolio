@@ -4,7 +4,6 @@ import { Text, View, StyleSheet } from 'react-native';
 const LocationDisplay = () => {
   const [currentLocation, setCurrentLocation] = useState(null);
   const [locationName, setLocationName] = useState('');
-  console.log(locationName,'<- this shit aint working')
 
   useEffect(() => {
     // Get the current location

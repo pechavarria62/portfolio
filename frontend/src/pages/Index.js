@@ -2,15 +2,12 @@
 import React from "react";
 import LocationDisplay from "../components/LocationDisplay";
 import { View } from "react-native";
-import IndexPage from "../pages/IndexPage";
-import Posts from "./Posts";
-
+import Drawer from "./Drawer";
 function Index() {
   return (
     <View>
-      {/* <LocationDisplay /> */}
-      <IndexPage/>
-      <Posts/>
+      <LocationDisplay />
+      <Drawer/>
     </View>
   );
 }
