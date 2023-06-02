@@ -1,14 +1,14 @@
 // Import all the pages here & components here
 import React from "react";
-import LocationDisplay from "../components/LocationDisplay";
+import Navigation from "../components/Navigation";
 import { View } from "react-native";
-import Drawer from "./Drawer";
+import {NavigationContainer} from '@react-navigation/native';
+
 function Index() {
   return (
-    <View>
-      <LocationDisplay />
-      <Drawer/>
-    </View>
+    <NavigationContainer>
+      <Navigation/>
+    </NavigationContainer>
   );
 }
 
