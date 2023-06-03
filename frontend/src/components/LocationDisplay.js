@@ -4,19 +4,17 @@ import { Text, View, StyleSheet } from 'react-native';
 const LocationDisplay = () => {
   const [currentLocation, setCurrentLocation] = useState(null);
   const [locationName, setLocationName] = useState('');
-
+  
   useEffect(() => {
     // Get the current location
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        setCurrentLocation(position);
-
         // Reverse geocoding
-        fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${position.coords.latitude},${position.coords.longitude}&key=YOUR_API_KEY`)
-          .then((response) => response.json())
-          .then((data) => {
-            if (data.results.length > 0) {
-              setLocationName(data.results[0].formatted_address);
+        fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${position.coords.latitude},${position.coords.longitude}&key=AIzaSyBpFfhUfvUuoWYoQ0qGDjk_J-1dNy2Roz4`)
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.results.length > 0) {
+            setLocationName(data.results[0].formatted_address);
             }
           })
           .catch((error) => console.log(error));
@@ -28,9 +26,9 @@ const LocationDisplay = () => {
 
   // Format the location coordinates and name as a string
   const getLocationString = () => {
-    if (currentLocation) {
-      const { latitude, longitude } = currentLocation.coords;
-      return `Latitude: ${latitude.toFixed(2)}, Longitude: ${longitude.toFixed(2)}, Location: ${locationName}`;
+    if (locationName) {
+      // const { latitude, longitude } = currentLocation.coords;
+      return `${locationName}`;
     }
     return 'Getting location...';
   };
@@ -47,14 +45,14 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 16,
     left: 16,
-    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+    backgroundColor: '#ffffff',
     paddingHorizontal: 12,
     paddingVertical: 8,
     borderRadius: 8,
     zIndex: 9999,
   },
   locationText: {
-    color: '#ffffff',
+    color: 'rgb(0, 0, 0)',
     fontSize: 14,
   },
 });
